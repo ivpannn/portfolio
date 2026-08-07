@@ -70,7 +70,7 @@ const projectData = [
 
     {
         image: "img/portfolio-pjt.png",
-        title: "My Portfolio Website",
+        title: "Portfolio Website",
         description: "A personal portfolio website to showcase my projects and skills.",
         skills: ["HTML", "CSS", "JavaScript"]
     },
