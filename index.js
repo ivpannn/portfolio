@@ -48,10 +48,17 @@ myPhoto.appendChild(pictureContainer);
 // Projects card auto-generate
 const projectData = [
     {
-        image: "img/portfolio-pjt.png",
-        title: "My Portfolio Website",
-        description: "A personal portfolio website to showcase my projects and skills.",
-        skills: ["HTML", "CSS", "JavaScript"]
+        image: "img/project3-pjt.jpg",
+        title: "LinedUp",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        skills: ["Skill1", "Skill2", "Skill3"]
+    },
+
+    {
+        image: "img/project4-pjt.jpg",
+        title: "SideQuest",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        skills: ["Skill1", "Skill2", "Skill3"]
     },
 
     {
@@ -62,18 +69,11 @@ const projectData = [
     },
 
     {
-        image: "img/project3-pjt.jpg",
-        title: "My third project",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        skills: ["Skill1", "Skill2", "Skill3"]
+        image: "img/portfolio-pjt.png",
+        title: "My Portfolio Website",
+        description: "A personal portfolio website to showcase my projects and skills.",
+        skills: ["HTML", "CSS", "JavaScript"]
     },
-
-    {
-        image: "img/project4-pjt.jpg",
-        title: "My fourth project",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        skills: ["Skill1", "Skill2", "Skill3"]
-    }
 ];
 
 const projectList = document.getElementById("project-card");
@@ -133,7 +133,7 @@ const experienceData = [
             "✅ Contributed to increased event participation by teaching the installation process",
             "✅ Collected and analyzed customer feedback during promotional activities to provide insights"
         ],
-        image: ["img/douyin1.jpeg", "img/douyin2.jpeg", "img/douyin3.jpeg"],
+        image: ["img/douyin2.jpeg", "img/douyin3.jpeg"],
         skills: ["Lead generation", "Data collection", "Conflict resolution"]
     },
 ];
