@@ -48,28 +48,28 @@ myPhoto.appendChild(pictureContainer);
 // Projects card auto-generate
 const projectData = [
     {
-        image: "img/project3-pjt.jpg",
+        image: "img/linedup_project_flyer.png",
         title: "LinedUp",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        skills: ["Skill1", "Skill2", "Skill3"]
+        description: "A mobile application that allows users to join virtual queues for various restaurants, improving the overall dining experience. The admin can manage the queue and monitor the restaurant's performance.",
+        skills: ["React Native", "ExpressJS", "Typescript", "NodeJS", "PrismaORM", "PostgreSQL"]
     },
 
     {
-        image: "img/project4-pjt.jpg",
+        image: "img/sidequest_project_flyer.png",
         title: "SideQuest",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        skills: ["Skill1", "Skill2", "Skill3"]
+        description: "A mobiile application that allows users to host, participate, and discover in local events, fostering community engagement and social interaction.",
+        skills: ["React Native", "TailwindCSS", "ExpressJS", "Typescript", "Socket.io", "PrismaORM", "SQLite", "React Native Maps"]
     },
 
     {
         image: "img/ecoquest-pjt.png",
         title: "EcoQuest",
-        description: "A school project that enables users to track their contributions and promotes environmental sustainability and awareness.",
+        description: "A web app project that enables users to track their contributions and promotes environmental sustainability and awareness.",
         skills: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
     },
 
     {
-        image: "img/portfolio-pjt.png",
+        image: "img/portfolio_flyer.png",
         title: "Portfolio Website",
         description: "A personal portfolio website to showcase my projects and skills.",
         skills: ["HTML", "CSS", "JavaScript"]
@@ -107,7 +107,7 @@ const experienceData = [
             "✅ Ability to handle customer inquiries, concerns, and complaints effectively",
             "✅ Ability to identify customer needs and tailor sales approaches accordingly"
         ],
-        image: ["img/dreamhouz.png", "img/dreamhouz1.png"],
+        image: ["img/dreamhouz.png", "img/dreamhouz3.png", "img/dreamhouz2.png"],
         skills: ["Strategic communication", "Storytelling and presentation", "Behavior Analysis", "Tone Control"]
     },
 
@@ -121,7 +121,7 @@ const experienceData = [
             "✅ Solved on-site problems quickly and adapted to last-minute changes",
             "✅ Encourage customers to engage with the event's game and distribution gift"
         ],
-        image: ["img/knorr.jpg", "img/knorr1.jpeg", "img/knorr2.jpeg"],
+        image: ["img/knorr.jpg", "img/knorr3.png", "img/knorr2.jpeg"],
         skills: ["Product promotion", "Consumer engagement", "Booth operation"]
     },
 
@@ -129,8 +129,9 @@ const experienceData = [
         company: "Douyin Event Crew | Douyin sdn bhd | 2025",
         duration: "Event Crew • December 2025",
         achievements: [
+            "✅ Contributed to increased event participation by teaching the deployment and usage process",
             "✅ Generated new user leads through direct engagement and promotional activities in multiple outstation events",
-            "✅ Contributed to increased event participation by teaching the installation process",
+            "✅ Leveraging free incentives to stimulate active user participation.",
             "✅ Collected and analyzed customer feedback during promotional activities to provide insights"
         ],
         image: ["img/douyin2.jpeg", "img/douyin3.jpeg"],
