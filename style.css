@@ -630,6 +630,146 @@ body {
         transform: scale(1.02);
         transition: 0.2s;
     }
+
+    /* project-details styles moved to global modal definitions */
+}
+
+#project-card-details {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.62);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-in-out;
+    backdrop-filter: blur(3px);
+}
+
+#project-card-details.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 820px);
+    max-height: min(95vh, 900px);
+    background-color: rgba(12, 12, 12, 0.95);
+    border-radius: 22px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.35);
+}
+
+.project-details #close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* 
+.project-details #close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 80%;
+    transition: 0.1s;
+} */
+
+.project-details h2 {
+    width: 100%;
+    margin: 0 0 1rem;
+    font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+    text-align: left;
+}
+
+.project-details img {
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #999;
+    margin-bottom: 1.25rem;
+}
+
+.project-details img:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.project-details .description {
+    font-size: 16px;
+    color: rgb(200, 200, 200);
+    margin: 0 0 1.2rem;
+    text-align: justify;
+}
+
+.project-details .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.project-details .skills {
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 10px;
+    background: rgba(99, 99, 99, 0.417);
+    color: #c5c5c5;
+    padding: 0.3em 0.7em;
+    margin: 0.2em 0.2em;
+}
+
+.project-details .skills:hover {
+    transform: scale(1.09);
+    transition: 0.3s;
+}
+
+.project-details .source-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.project-details .source-link img {
+    width: 30px;
+    height: auto;
+    padding: 0.4em;
+}
+
+.project-details .source-link img:hover {
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+/* creates a background blur effect and disables page interactions behind the popup (modal) when its open */
+body.modal-open #navbar,
+body.modal-open #element> :not(#project-card-details),
+body.modal-open #bg-color {
+    filter: blur(8px);
+    transition: filter 0.25s ease-in-out;
+    /* prevents users from clicking background links/buttons */
+    pointer-events: none;
+    /* prevents users from highlighting background text */
+    user-select: none;
+}
+
+body.modal-open #project-card-details {
+    pointer-events: auto;
+    /* ensures the popup itself remains clickable */
 }
 
 /* Experience */

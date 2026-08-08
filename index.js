@@ -49,34 +49,43 @@ myPhoto.appendChild(pictureContainer);
 const projectData = [
     {
         image: "img/linedup_project_flyer.png",
+        details_img: "img/linedup_detailed_img.png",
         title: "LinedUp",
         description: "A mobile application that allows users to join virtual queues for various restaurants, improving the overall dining experience. The admin can manage the queue and monitor the restaurant's performance.",
-        skills: ["React Native", "ExpressJS", "Typescript", "NodeJS", "PrismaORM", "PostgreSQL"]
+        skills: ["React Native", "ExpressJS", "Typescript", "NodeJS", "PrismaORM", "PostgreSQL"],
+        source: "https://github.com/ivpannn/LinedUp"
     },
 
     {
         image: "img/sidequest_project_flyer.png",
+        details_img: "img/sidequest_project_flyer.png",
         title: "SideQuest",
         description: "A mobiile application that allows users to host, participate, and discover in local events, fostering community engagement and social interaction.",
-        skills: ["React Native", "TailwindCSS", "ExpressJS", "Typescript", "Socket.io", "PrismaORM", "SQLite", "React Native Maps"]
+        skills: ["React Native", "TailwindCSS", "ExpressJS", "Typescript", "Socket.io", "PrismaORM", "SQLite", "React Native Maps"],
+        source: ""
     },
 
     {
         image: "img/ecoquest-pjt.png",
+        details_img: "img/ecoquest_detailed_img.png",
         title: "EcoQuest",
         description: "A web app project that enables users to track their contributions and promotes environmental sustainability and awareness.",
-        skills: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+        skills: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+        source: "https://github.com/ivpannn/EcoQuest"
     },
 
     {
         image: "img/portfolio_flyer.png",
+        details_img: "img/portfolio_flyer.png",
         title: "Portfolio Website",
         description: "A personal portfolio website to showcase my projects and skills.",
-        skills: ["HTML", "CSS", "JavaScript"]
+        skills: ["HTML", "CSS", "JavaScript"],
+        source: "https://github.com/ivpannn/portfolio"
     },
 ];
 
 const projectList = document.getElementById("project-card");
+const projectCardDetails = document.getElementById("project-card-details");
 
 projectData.forEach(pjt => {
     const container = document.createElement("div");
@@ -93,6 +102,54 @@ projectData.forEach(pjt => {
     </div>
 `;
     projectList.appendChild(container);
+});
+
+// pop-up project card details
+projectList.addEventListener("click", (event) => {
+    const projectCard = event.target.closest(".projects");
+    if (projectCard) {
+        const projectTitle = projectCard.querySelector(".title").textContent;
+        const project = projectData.find(pjt => pjt.title === projectTitle);
+
+        if (project) {
+            const sourceLink = project.source ? `
+                    <a href="${project.source}" target="_blank" rel="noreferrer" class="source-link">
+                        <img src="img/github-svgrepo-com.svg" alt="View Source" class="source-icon">
+                    </a>` : '';
+
+            projectCardDetails.innerHTML = `
+                <div class="project-details">
+                    <button id="close-btn">&times;</button>
+                    <h2>${project.title}</h2>
+                    <img src="${project.details_img}" alt="${project.title}">
+                    <p class="description">${project.description}</p>
+                    <div class="skill-container">
+                        ${project.skills.map(skill =>
+                `<span class="skills">${skill}</span>`
+            ).join("")}
+                    </div>
+                    ${sourceLink}
+                </div>
+            `;
+
+            projectCardDetails.classList.add("active");
+            document.body.classList.add("modal-open");
+        }
+    }
+});
+
+projectCardDetails.addEventListener("click", (event) => {
+    if (event.target.id === "close-btn" || event.target === projectCardDetails) {
+        projectCardDetails.classList.remove("active");
+        document.body.classList.remove("modal-open");
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && projectCardDetails.classList.contains("active")) {
+        projectCardDetails.classList.remove("active");
+        document.body.classList.remove("modal-open");
+    }
 });
 
 //Experiences auto-generate
@@ -134,7 +191,7 @@ const experienceData = [
             "✅ Leveraging free incentives to stimulate active user participation.",
             "✅ Collected and analyzed customer feedback during promotional activities to provide insights"
         ],
-        image: ["img/douyin2.jpeg", "img/douyin3.jpeg"],
+        image: ["img/douyin1.png", "img/douyin2.jpeg", "img/douyin3.jpeg"],
         skills: ["Lead generation", "Data collection", "Conflict resolution"]
     },
 ];
@@ -174,20 +231,21 @@ const educationData = [
         institution: "Asia Pacific University",
         program: "Diploma in Software Engineering",
         achievements: [
-            "A CGPA of 3.89 was maintained throughout the diploma studies",
-            "4.0 GPA for both first & second semesters",
-            "Full-stack developer",
+            "A CGPA of 3.92 was maintained throughout the diploma studies",
+            "4.0 GPA for both first, second & fourth semesters",
+            "Full-stack developer (Built mobile and web applications using modern technologies)",
             "Rust Malaysia Greet-Up Meetup"
         ]
     },
 
     {
         institution: "Sijil Pelajaran Malaysia - SMK Dato Onn",
-        program: "Multimedia student",
+        program: "Multimedia stream (SPM, Malaysia national examination)",
         achievements: [
             "Basic in Microsoft Office Suite (Word, Excel, PowerPoint)",
             "Basic graphic design software (e.g., Adobe Photoshop)",
-            "Basic versatile animator in 2D and 3D animation techniques (Adobe Flash, Autodesk 3D)"
+            "Basic versatile animator in 2D and 3D animation techniques (Adobe Flash, Autodesk 3D)",
+            "Best Subject Award - Multimedia Production (SPM, Malaysia national examination)",
         ]
     },
 
