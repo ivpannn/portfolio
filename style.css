@@ -8,6 +8,13 @@ body {
     font-family: Roboto, sans-serif;
 
     overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* Bg-color */
@@ -641,7 +648,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-    z-index: 9999;
+    z-index: 10001;
     background: rgba(0, 0, 0, 0.62);
     opacity: 0;
     pointer-events: none;
@@ -767,9 +774,19 @@ body.modal-open #bg-color {
     user-select: none;
 }
 
+body.modal-open #element {
+    z-index: 10000;
+}
+
 body.modal-open #project-card-details {
     pointer-events: auto;
     /* ensures the popup itself remains clickable */
+}
+
+html.modal-open,
+body.modal-open {
+    overflow: hidden;
+    touch-action: none;
 }
 
 /* Experience */

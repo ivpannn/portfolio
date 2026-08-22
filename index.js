@@ -134,6 +134,7 @@ projectList.addEventListener("click", (event) => {
 
             projectCardDetails.classList.add("active");
             document.body.classList.add("modal-open");
+            document.documentElement.classList.add("modal-open");
         }
     }
 });
@@ -142,6 +143,7 @@ projectCardDetails.addEventListener("click", (event) => {
     if (event.target.id === "close-btn" || event.target === projectCardDetails) {
         projectCardDetails.classList.remove("active");
         document.body.classList.remove("modal-open");
+        document.documentElement.classList.remove("modal-open");
     }
 });
 
@@ -149,6 +151,7 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && projectCardDetails.classList.contains("active")) {
         projectCardDetails.classList.remove("active");
         document.body.classList.remove("modal-open");
+        document.documentElement.classList.remove("modal-open");
     }
 });
 
